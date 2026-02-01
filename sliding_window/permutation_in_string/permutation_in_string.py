@@ -5,12 +5,17 @@ print(all([1,0,1])) # true if all elements in iterable is non-zero
 def letter_to_idx(letter: str) -> int:
     return ord(letter) - ord("a")
 
-# permutation := same letters, different order
+# Permutation := same letters, different order
 #  - map letters to their frequency
-# substring := sequential subsection of a string
-#   - sliding window (fixed size in this example)
-#   - fix sized sliding window: 
+# Substring := sequential subsection of a string
+#   - Sliding window (fixed size in this example)
+#   - Fix sized sliding window: 
 #      - loose 1 on left while gain 1 on right (if going right, and vice versa)
+
+# window: [i - n1 + 1, i]; 
+# invariant: 
+#   1. at any iteration i, freqs2 tracks character count in s2[i - n1, i]
+#   2. freqs2 == freqs1 iff a permutation of s1 exists in s2
 def checkInclusion(s1: str, s2: str) -> bool:
     n1 = len(s1)
     n2 = len(s2)

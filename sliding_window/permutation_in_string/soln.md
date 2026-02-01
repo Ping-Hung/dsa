@@ -40,4 +40,4 @@ return False
 ### Space Complexity
 - constant, 2 list of 26 elements and some local variables ⇒ $O(1)$
 ### Time Complexity
-- $O(n2)$, the algorithm has to check each letter in `s2` and see if a permutation of `s1` exists
+- $O(n_2)$, the algorithm has to check each letter in `s2` and see if a permutation of `s1` exists

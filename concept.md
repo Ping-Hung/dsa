@@ -2,9 +2,11 @@
 ## Prompt
 _What's the process of using leetcode to gain algorithm design experience/maturity?_
 
-**A)** 2. identify a technique/strategy 2. solve the problem 3. derive invariants
-**B)** 1. identify a technique/strategy 2. derive invariants 3. use invariants to solve problem 
-**C)** Other suggestions.
+**A)** 2. identify a technique/strategy 2. solve the problem 3. derive invariants 
+
+**B)** 1. identify a technique/strategy 2. derive invariants 3. use invariants to solve problem  
+
+**C)** Other suggestions. 
 ## Response
 This is an excellent meta-question — it’s the kind of question people ask **right before their algorithmic thinking levels up**.
 

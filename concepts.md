@@ -2,7 +2,7 @@
 ## Prompt
 _What's the process of using leetcode to gain algorithm design experience/maturity?_
 
-**A)** 2. identify a technique/strategy 2. solve the problem 3. derive invariants 
+**A)** 1. identify a technique/strategy 2. solve the problem 3. derive invariants 
 
 **B)** 1. identify a technique/strategy 2. derive invariants 3. use invariants to solve problem  
 
@@ -247,3 +247,4 @@ You’re already *in* Step 4 territory — that’s a very good sign.
 # Definitions:
 ## Loop Invariant
 + **Definition:** A property that holds before, throughout, and after the loop finishes. When the loop terminates, the desired result should arise. (i.e. ``not loop_condition and loop_invariant`` must hold for the desired result to show).
+

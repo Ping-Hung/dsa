@@ -1,18 +1,27 @@
-# Concept:
-* DP is about solving problem with overlapping subproblems.
-
-# DP Approach 1
-## Applying SRTBOT Framework
+# Concepts and Mental Model
+> DP is about solving problem with overlapping subproblems.
+## The SRTBOT Framework
 1. **Subproblem** definition
+    + Describe the meaning of subproblem in ==**words**==, in terms of input
+    parameters
+    + Subproblems usually lie in ==**subsets of input**==
+        - e.g. prefix, suffix, running (continuous) substring of a sequence
+    + Subproblems usually record ==partial state==(of the entire solution):
+        - could add subproblems by incrementing some auxiliary variables.
 2. **Relate** subproblem solutions recursively
+    + look for recursive relation between subproblems
 3. **Topological order** on subproblems
+    + For arguing relation is _acyclic_ and _subproblems form a DAG_
 4. **Base** cases of relation
+    + Solution to ultra simple cases (for all reachable subproblems) when
+    recursion is not needed
 5. **Original** problem solution via subproblem(s)
+    + Show how the original problem could be solved by reusing solutions to subproblem(s)
 6. **Time** and space analysis
-
 * Source: MIT 6.006 Introduction to Algorithms
-# DP Approach 2 
-> recursive backtrack -> top-down + memoization -> bottom-up + memoization (a.k.a tabulation) -> bottom-up without memo.
+
+# Greg Hogg's DP Approach
+> recursive backtrack -> top-down memoization -> bottom-up tabulation -> bottom-up without table (or only partial table)
 * source: https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share
 
 

@@ -2,11 +2,11 @@
 > DP is about solving problem with overlapping subproblems.
 ## The SRTBOT Framework
 1. **Subproblem** definition
-    + Describe the meaning of subproblem in ==**words**==, in terms of input
+    + Describe the meaning of subproblem in <mark>**words**</mark>, in terms of input
     parameters
-    + Subproblems usually lie in ==**subsets of input**==
+    + Subproblems usually lie in <mark>**subsets of input**</mark>
         - e.g. prefix, suffix, running (continuous) substring of a sequence
-    + Subproblems usually record ==partial state==(of the entire solution):
+    + Subproblems usually record <mark>partial state</mark> (of the entire solution):
         - could add subproblems by incrementing some auxiliary variables.
 2. **Relate** subproblem solutions recursively
     + look for recursive relation between subproblems
@@ -34,5 +34,5 @@ Pause and ask these guiding questions (assume _f(x)_ is the recursive function):
 5. _Does this match small hand-calculated cases?_
 
 # Cache/Memoization Notes:
-1. _Cache/Memo only remembers ==past computation==, which are computed by recursion._
+1. _Cache/Memo only remembers <mark>past computation</mark>, which are computed by recursion._
 2. _Memoization stores answers to states, not transitions between states._

@@ -1,6 +1,6 @@
 # Concepts and Mental Model
 > DP is about solving problem with overlapping subproblems.
-## The SRTBOT Framework
+## The SRTBOT Framework (For Logically Rigorous Algorithm Design)
 1. **Subproblem** definition
     + Describe the meaning of subproblem in <mark>**words**</mark>, in terms of input
     parameters
@@ -24,7 +24,8 @@
 6. **Time** and space analysis
 * Source: MIT 6.006 Introduction to Algorithms
 
-# Greg Hogg's DP Approach
+## Greg Hogg's Approach (More Interview-Style, Time Limited Approach)
+* This is essentially compressed SRTBOT
 > recursive backtrack -> top-down memoization -> bottom-up tabulation -> bottom-up without table (or only partial table)
 * source: https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share
 

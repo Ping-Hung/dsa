@@ -22,12 +22,12 @@
 5. **Original** problem solution via subproblem(s)
     + Show how the original problem could be solved by reusing solutions to subproblem(s)
 6. **Time** and space analysis
-* Source: MIT 6.006 Introduction to Algorithms
+* Source: [MIT 6.006 Introduction to Algorithms: DP Lecture Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec15/)
 
 ## Greg Hogg's Approach (More Interview-Style, Time Limited Approach)
 * This is essentially compressed SRTBOT
 > recursive backtrack -> top-down memoization -> bottom-up tabulation -> bottom-up without table (or only partial table)
-* source: https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share
+* source: [https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share](https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share)
 
 
 # How to Verify Recursion

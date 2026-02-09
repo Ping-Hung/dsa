@@ -14,7 +14,8 @@ last index in cost.
 
 # Applying SRTBOT Framework
 1. **Subproblem**: `min_cost[i]`:= minimum cost required to reach stair case `i`
-2. **Relate**: to reach level `i`, one must choose the minimum between
+2. **Relate** (with recursion relation): to reach level `i`, one must choose the
+minimum between
 `min_cost[i - 2] + cost[i - 2]` and `min_cost[i - 1] + cost[i - 1]`, more formally
 ```
 min_cost[i] = min(min_cost[i - 1] + cost[i - 1], min_cost[i - 2] + cost[i - 2])

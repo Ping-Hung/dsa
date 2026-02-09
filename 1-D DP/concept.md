@@ -2,8 +2,19 @@
 * DP is about solving problem with overlapping subproblems.
 
 # DP Approach 1
+## Applying SRTBOT Framework
+1. **Subproblem** definition
+2. **Relate** subproblem solutions recursively
+3. **Topological order** on subproblems
+4. **Base** cases of relation
+5. **Original** problem solution via subproblem(s)
+6. **Time** and space analysis
+
+* Source: MIT 6.006 Introduction to Algorithms
+# DP Approach 2 
 > recursive backtrack -> top-down + memoization -> bottom-up + memoization (a.k.a tabulation) -> bottom-up without memo.
 * source: https://www.youtube.com/shorts/uUjFL0C-vY0?feature=share
+
 
 # How to Verify Recursion
 Pause and ask these guiding questions (assume _f(x)_ is the recursive function):

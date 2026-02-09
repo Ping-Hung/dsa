@@ -21,8 +21,8 @@ minimum between
 min_cost[i] = min(min_cost[i - 1] + cost[i - 1], min_cost[i - 2] + cost[i - 2])
 ```
 3. **Topological Order**: increasing value of `i` (we climb up from level 0 to `len(cost) - 1`)
-4. **Base case**: `min_cost[0] = min_cost[1] = 0` as the problem stated one
-could choose to begin from either of the two with no cost
+4. **Base case**: `min_cost[0] = min_cost[1] = 0`. Per problem statement, one
+could begin from either one with no cost.
 5. **Original Problem**: We want to find `min_cost[n]`, which is defined by the
 recurrence relation:
 ```

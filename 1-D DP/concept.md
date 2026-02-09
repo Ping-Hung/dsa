@@ -10,11 +10,15 @@
         - could add subproblems by incrementing some auxiliary variables.
 2. **Relate** subproblem solutions recursively
     + look for recursive relation between subproblems
+    + DP recurrence must satisfy:
+        > 1. define **only one** state at a time
+        > 2. decisions must be made by comparing **complete subproblem solutions**
+         instead of local costs.
 3. **Topological order** on subproblems
     + For arguing relation is _acyclic_ and _subproblems form a DAG_
 4. **Base** cases of relation
     + Solution to ultra simple cases (for all reachable subproblems) when
-    recursion is not needed
+    recursion (or dependency on subproblems) is not needed
 5. **Original** problem solution via subproblem(s)
     + Show how the original problem could be solved by reusing solutions to subproblem(s)
 6. **Time** and space analysis

@@ -1,6 +1,11 @@
 # DSA
 Personal DSA study notes
 
+# Algorithm Design
+- There will usually be 2 parts in an algorithm
+1. remember past states/computations.
+2. use that "memory" to perform computation until desired result is obtained.
+
 # Notes
 1. [how to cultivate algorithmic maturity by solving problems?](concepts.md)
 2. [Sliding Window Tips](sliding_window/concept.md)

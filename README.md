@@ -7,12 +7,13 @@ Personal DSA study notes
 2. use that "memory" to perform computation until desired result is obtained.
 
 # Notes
-1. [how to cultivate algorithmic maturity by solving problems?](concepts.md)
-2. [Sliding Window Tips](sliding_window/concept.md)
-3. [Last Seen Index](Last-Seen-Index/concept.md)
-4. [DFS Guide](DFS/concept.md)
-5. [BFS Guide](BFS/concept.md)
-6. [DP Approaches](1-D\ DP/concept.md)
+1. [Cultivating algorithmic maturity by solving problems](concepts.md)
+2. [Interview Problem Solving Strategy](strategy.md)
+3. [Sliding Window Tips](sliding_window/concept.md)
+4. [Last Seen Index](Last-Seen-Index/concept.md)
+5. [DFS Guide](DFS/concept.md)
+6. [BFS Guide](BFS/concept.md)
+7. [DP Approaches](1-D\ DP/concept.md)
 
 # Interview Guidelines
 1. READ! the problem carefully, DON'T rush to code.

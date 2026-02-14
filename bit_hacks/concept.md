@@ -28,7 +28,7 @@
 - Masking: intentionally cover up a portion of an entire pattern.  
 
 ```c
-    unsigned mask = 1U; // or 3, 7, 15, ..., depending on the width of the preserving bit-group
+    unsigned mask = (1 << width) - 1; // 1, 3, 7, ... 2^width - 1
     unsigned offset = lsb_of_interest - 0; // number of bits the lsb of the preserving bit-group is away from bit-0
     unsigned new_pattern = pattern & (mask << (mask_width * offset));
 ```  

@@ -13,7 +13,7 @@ Personal DSA study notes
 4. [Last Seen Index](Last-Seen-Index/concept.md)
 5. [DFS Guide](DFS/concept.md)
 6. [BFS Guide](BFS/concept.md)
-7. [DP Approaches](1-D\ DP/concept.md)
+7. [DP Approaches](1-D%20DP/concept.md)
 
 # Interview Guidelines
 1. READ! the problem carefully, DON'T rush to code.

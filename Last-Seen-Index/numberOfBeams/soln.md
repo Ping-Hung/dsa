@@ -13,9 +13,10 @@ Return the total number of laser beams in the bank.
 
 ---
 **Example 1**
-![Example 1](laser.png)
-**Input:** bank = ["011001","000000","010100","001000"]
-**Output:** 8
+![Example 1](laser.png) 
+
+**Input:** bank = ["011001","000000","010100","001000"]     
+**Output:** 8   
 **Explanation:** Between each of the following device pairs, there is one beam. In total, there are 8 beams:
  * bank[0][1] -- bank[2][1]
  * bank[0][1] -- bank[2][3]

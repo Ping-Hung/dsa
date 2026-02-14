@@ -28,7 +28,7 @@
 - Masking: intentionally cover up a portion of an entire pattern.  
 
 ```c
-    unsigned mask = (1 << width) - 1; // 1, 3, 7, ... 2^width - 1
+    unsigned mask = (1U << width) - 1; // 1, 3, 7, ... 2^width - 1
     unsigned offset = lsb_of_interest - 0; // number of bits the lsb of the preserving bit-group is away from bit-0
     unsigned new_pattern = pattern & (mask << (mask_width * offset));
 ```  
@@ -65,3 +65,9 @@
 ```c
     unsigned x &= ~1; // turn off (unset) the 0th bit in x
 ```  
+- Zero out (more common in assembly)
+    - if x is a boolean variable, by definition of XOR operator, x XOR x = 0.
+
+```x86
+    xor eax, eax
+```

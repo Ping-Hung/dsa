@@ -27,7 +27,7 @@ towards glass (99,99) as shown below
       /   \ /  \
     (2,0)(2,1)(2,2)
 ```
-2. Looks like we could construct a 2D-DP table to **track states (how full glass at (i,j) is**  
+2. Looks like we could construct a 2D-DP table to **track states (how full glass at (i,j) is)**  
     DP  
 
     |0|1|2|...|99|
@@ -39,7 +39,7 @@ towards glass (99,99) as shown below
     |99| | | | |
 
 3. By trying out examples (only 3 layers is enough), one could notice
-    - For a glass at `(i,j)`, its overflow/spill amount is 
+    - For a glass at `(i,j)`, its overflow/spill amount is  
     $$
         overflow = \left\{ \begin{aligned} 
             &0,    &poured < 1\\

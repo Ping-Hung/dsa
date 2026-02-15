@@ -40,12 +40,12 @@ towards glass (99,99) as shown below
 
 3. By trying out examples (only 3 layers is enough), one could notice
     - For a glass at `(i,j)`, its overflow/spill amount is  
-    $$
-        overflow = \left\{ \begin{aligned} 
+    ```math
+    overflow = \left\{ \begin{aligned} 
             &0,    &poured < 1\\
             &poured - 1, &else
         \end{aligned} \right.
-    $$
+    ```
     - It's equivalent to
     ```
         overflow = max(poured - 1, 0)

@@ -83,10 +83,10 @@ towards glass (99,99) as shown below
 ## Time $O(n^2)$
 - worse case: querying glass (99,99), which requires filling in the entire table  
 **Naive Implementation**:  
-$/Theta(n^2)$
+$\Theta(n^2)$
 - regardless of query parameters, the implementation always fill out the entire table
 
-## Space Complexity $/Theta(n^2)$
+## Space Complexity $\Theta(n^2)$
 - Dependent on query parameter (smarter implementation)
 
 

@@ -14,7 +14,8 @@ Personal DSA study notes
 5. [DFS Guide](DFS/concept.md)
 6. [BFS Guide](BFS/concept.md)
 7. [DP Approaches](1-D%20DP/concept.md)
-8. [(Low level) Bit Hacks)](bit_hacks/concept.md)
+8. [2D DP](2D_DP/concept.md)
+9. [(Low level) Bit Hacks)](bit_hacks/concept.md)
 
 # Interview Guidelines
 1. READ! the problem carefully, DON'T rush to code.

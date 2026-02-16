@@ -22,8 +22,8 @@ Personal DSA study notes
 2. Identify ambiguity/questions, try figure them out.
 3. Know EXACTLY what inputs are and what desired outputs look like.
 4. Play with examples by drawing (visualizing) them first.
-  + Look for patterns
-  + Think what data structures are involved (or needs to be involved)
+    + Look for patterns
+    + Think what data structures are involved (or needs to be involved)
 5. Code.
 
 ## Practice/Training Tips

@@ -76,13 +76,8 @@ def numberOfBeams(bank: List[str]) -> int:
 * let $n$ be the number of strings provided by the input, and $m$ be the length of each string.
 ## Time Complexity: $O(n * m)$
 - Scanning each string to check device existence
-$$
-O(m)
-$$
-- Performing this operation across all strings
-$$
-O(mn)
-$$
+$O(m)$
+- Performing this operation across all strings $O(n * m)$
 
 ## Space Complexity: O(1)
 - only use local variables

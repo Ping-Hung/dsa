@@ -26,10 +26,10 @@ Personal DSA study notes
   + Think what data structures are involved (or needs to be involved)
 5. Code.
 
-## Side Notes
+## Practice/Training Tips
 - Limit (pure and rigorous) thinking time to 5 ~ 15 minutes max. Try answering
 > “What is the simplest thing I can track to solve this?”
-  - If after that time you're still debating, choose the **simplest** state variable
+  - If you're still debating after that time , choose the **simplest** state variable
 ### Guideline
 **Thinking mode (≤10 min):**    
 - identify events

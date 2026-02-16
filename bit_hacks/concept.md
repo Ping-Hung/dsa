@@ -39,9 +39,9 @@
 
 ```c
     /* 
-     *  This "dereferencing casted address" trick preserves the bit pattern 
-     *   of the operand and returns a 
-     * 	"direct translation" of that bit pattern as the type specified. 
+     *  This "dereferencing/accessing casted address" trick preserves the bit pattern 
+     *   of the operand and returns a  "direct translation" of that bit pattern
+     *   as the type specified. 
      *  e.g. 0xff << 23 --> *(float *)& --> bit pattern 0xff << 23 treated as a float.
      */
     unsigned int pattern = (0xff << 23) | 1;

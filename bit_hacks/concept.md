@@ -36,6 +36,7 @@
 ```  
 2. <mark>**Looking at raw pattern**</mark> (stored in an address), then (optionally) reinterpret its type.
     - Can see this type of trick in John Carmack's famous fast inverse square root code.  
+    - **Caution:** This trick might cause memory issue when the cast converts a smaller type to a larger type.
 
 ```c
     /* 

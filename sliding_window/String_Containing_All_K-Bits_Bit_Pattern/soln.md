@@ -64,4 +64,36 @@ bool hasAllCodes(char* s, int k)
 # Potential Improvement
 - Use a variable to keep track of how many patterns seen: this eliminates the final loop
     - Time complexity becomes $O(n)$
-- Use bit masking to speed up performance.
+- Use bit operations like masking, ORing, and shifting to replace addition and
+  multiplication.
+
+## Improved Implementation
+```c
+#define MAX_PATTERNS 1U << 20   // there are 2^k possible patterns 
+/* usage: pattern[0b101] = pattern[5] := is 5 seen? */
+bool pattern[MAX_PATTERNS] = { false };  
+
+bool hasAllCodes(char* s, int k) {
+    unsigned code_val = 0;
+    int s_len = strlen(s);
+    int pattern_seen = 1 << k;
+
+    /* scan through s, book-keeping seen patterns */ 
+    int l = 0;
+    unsigned mask = pattern_seen - 1;   /* do this to keep the lower k bits (for safety on large inputs) */
+    for (int r = 0; r < s_len; r++) {
+        code_val = ((code_val << 1) & mask) | (s[r] - '0');
+        if (r - l + 1 == k) {
+            if (!pattern[code_val]) {
+                pattern[code_val] = true;
+                pattern_seen--; /* mark **unique** patterns seen thus far */
+            }
+            /* prep for next iter: unset (turn off) the kth (highest order) bit */
+            code_val &= ~(1 << (k - 1));
+            l += 1;
+        }
+    }
+    /* if all pattern are seen/present, return true, else false */
+    return pattern_seen == 0;
+}
+```

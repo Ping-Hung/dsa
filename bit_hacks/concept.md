@@ -37,16 +37,41 @@
 2. <mark>**Looking at raw pattern**</mark> (stored in an address), then (optionally) reinterpret its type.
     - Can see this type of trick in John Carmack's famous fast inverse square root code.  
     - **Caution:** This trick might cause memory issue when the cast converts a smaller type to a larger type.
+    - It is in general safer to use a `union` to reinterpret a single bit pattern to different data types.
 
 ```c
     /* 
      *  This "dereferencing/accessing casted address" trick preserves the bit pattern 
      *   of the operand and returns a  "direct translation" of that bit pattern
      *   as the type specified. 
+     * 	    - **Caution**: this trick is an undefined behavior (UB) by C
+     * 	      standards, and is generally safer to use a union for multiple
+     * 	      interpretation of a single bit patter.
      *  e.g. 0xff << 23 --> *(float *)& --> bit pattern 0xff << 23 treated as a float.
      */
     unsigned int pattern = (0xff << 23) | 1;
     float d = *(float *)&pattern;
+
+    /**
+     *      The Union trick
+     * Usual format: 
+     *  union {
+     *      type1 as_type1;
+     *      type2 as_type2;
+     *      ...
+     *  } u_var = {...};
+     */
+
+    union {
+        float as_float;
+        unsigned as_uint;
+    } u_var = {.as_uint = pattern};
+
+    printf("\nUsing the union trick\n");
+    printf("float interpretation: %.3f\n"
+           "unsigned interpretation: %u\n",
+           u_var.as_float,
+           u_var.as_uint);
 ```  
 3. <mark>**Toggle**</mark>: change a bit-field (or a group of bit-fields) from 0 to 1 or 1 to 0.
     - Done with XOR (let x be a 1b long boolean variable, x ^ 1 = ~x holds)  

@@ -34,7 +34,7 @@ min_cost[n] = min(min_cost[n - 1] + cost[n - 1], min_cost[n - 2] + cost[n - 2])
     + **Space complexity**: $O(n)$ or $O(1)$ depending on implementation
 
 # Implementations
-## $O(n)$ Solution
+## $O(n)$ Space Solution
 + Bottom-up DP tabulation
 ```python
     def minCostClimbingStairs(cost: List[int]) -> int:
@@ -53,7 +53,7 @@ min_cost[n] = min(min_cost[n - 1] + cost[n - 1], min_cost[n - 2] + cost[n - 2])
                 dp[i] = dp[i - 1] + cost[i - 1]
         return dp[n]
 ```
-## $O(1)$ Solution
+## $O(1)$ Space Solution
 + Bottom-up DP Optimized, replace the `dp` table with local variables
 ```python
     def minCostClimbingStairs(self, cost: List[int]) -> int:

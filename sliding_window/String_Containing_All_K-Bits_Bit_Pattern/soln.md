@@ -24,13 +24,13 @@ of length `k` is a substring of `s`. Otherwise, return false.
 bool hasAllCodes(char* s, int k) 
 {
     // there are 2^k possible patterns
-    bool pattern[MAX_PATTERNS] = { false };  // pattern[0b101] = pattern[5] := is 5 seen?
+    bool pattern[MAX_PATTERNS] = { false };  // usage: pattern[binary_code] records if binary_code is seen
     int code_val = 0;
     int s_len = strlen(s);
     // scan through s, book-keeping seen patterns
     int l = 0;
     for (int r = 0; r < s_len; r++) {
-        code_val = 2*code_val + (s[r] - '0');
+        code_val = 2 * code_val + (s[r] - '0');
         if (r - l + 1 == k) {
             if (code_val == 0) {
                 pattern[0] = true;

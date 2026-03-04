@@ -46,7 +46,7 @@
      *   as the type specified. 
      * 	    - **Caution**: this trick is an undefined behavior (UB) by C
      * 	      standards, and is generally safer to use a union for multiple
-     * 	      interpretation of a single bit patter.
+     * 	      interpretation of a single bit pattern.
      *  e.g. 0xff << 23 --> *(float *)& --> bit pattern 0xff << 23 treated as a float.
      */
     unsigned int pattern = (0xff << 23) | 1;

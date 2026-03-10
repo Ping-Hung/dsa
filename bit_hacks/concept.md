@@ -37,7 +37,8 @@
 2. <mark>**Looking at raw pattern**</mark> (stored in an address), then (optionally) reinterpret its type.
     - Can see this type of trick in John Carmack's famous fast inverse square root code.  
     - **Caution:** This trick might cause memory issue when the cast converts a smaller type to a larger type.
-    - It is in general safer to use a `union` to reinterpret a single bit pattern to different data types.
+    - It is in general safer to use a `union` to reinterpret a single bit
+      pattern to different data types (a.k.a type punning trick).
 
 ```c
     /* 
@@ -53,7 +54,7 @@
     float d = *(float *)&pattern;
 
     /**
-     *      The Union trick
+     *      The Union trick (a.k.a type punning)
      * Usual format: 
      *  union {
      *      type1 as_type1;

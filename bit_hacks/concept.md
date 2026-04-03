@@ -118,10 +118,10 @@
         /* loop body */
     }
 ```
-    - Even better way: (use `size_t` instead of `unsigned`)
-        - `int` or `unsigned` only garauntees valid representation of $[-2^15, 2^15 - 1]$ (union of signed and unsigned)
-            - This is not neccessarily the **width of a word** (modern machines are 32 bits)
-        - `size_t` is garaunteed to be **word** size wide and `unsigned`, can represent $[0, 2^31 - 1]$ values.
+- Even better way: (use `size_t` instead of `unsigned`)
+    - `int` or `unsigned` only garauntees valid representation of $[-2^15, 2^15 - 1]$ (union of signed and unsigned)
+        - This is not neccessarily the **width of a word** (modern machines are 32 bits)
+    - `size_t` is garaunteed to be **word** size wide and `unsigned`, can represent $[0, 2^31 - 1]$ values.
 
 7. <mark>**Multiplying $2^k$ by Left Shifts**</mark>
     - Goal: after shift, $x$ becomes $x \times 2^k$
@@ -137,7 +137,7 @@
 ```
 
 8. <mark> **Dividing $2^k$ by Right Shifts** </mark>
-    - Goal: after shift $x$ becomes $\lfloor x \div 2^k \rfloor$
+    - Goal: after shift $x$ becomes $\lfloor x / 2^k \rfloor$
     - Assume a width of $w$.
     - Right shifts: keep the width of the first operand ($w$), shift all bits to the right by $k$ (second operand).
         - *Arithmetic right shift*: duplicate the sign-bit to the upper $k$ bits of the result.
@@ -154,15 +154,15 @@
      * to achieve Goal.
      */
      int x = SIGNED_CONSTANT;
-     x = (x + ((1 << k) - 1)) >> k; /* equals to floor(x / 2^k);
+     x = (x + ((1 << k) - 1)) >> k; /* equals to floor(x / 2^k) */
 ```
 
 - **Notes on Signed Right Shifts**
-- when $x < 0$, `x >>= k` $neq \lfloor x \div 2^k \rfloor$
-- round towards $- \infty$
-- `x = (x + ((1 << k) - 1)) >> k;` $= \lfloor x \div 2^k \rfloor$
-    - `(x + ((1 << k) - 1))` adds `0b1...1` (k-bit of one's) to `x`
+- when $x < 0$, `x >>= k` $\neq \lfloor x / 2^k \rfloor$
+    - $x$ is rounded towards $- \infty$
+- `x = (x + ((1 << k) - 1)) >> k;` $= \lfloor x / 2^k \rfloor$
+    - `(x + ((1 << k) - 1))` adds `0b1...1` (k-bits of `1`) to `x`
     - This "rounds up" the upper $w - k$ bits of `x` before the shift.
     - When the shift happens, rounding is not towards $- \infty$.
-    - equivalent to $x = \lfloor (x + 2^k - 1) / 2^k \rfloor$. 
+    - The C expression is equivalent to $x = \lfloor (x + 2^k - 1) / 2^k \rfloor$. 
 

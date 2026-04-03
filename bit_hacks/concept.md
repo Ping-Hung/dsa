@@ -119,7 +119,7 @@
     }
 ```
 - Even better way: (use `size_t` instead of `unsigned`)
-    - `int` or `unsigned` only garauntees valid representation of $[-2^15, 2^15 - 1]$ (union of signed and unsigned)
+    - `int` or `unsigned` only garauntees valid representation of $[-2^{15}, 2^{15} - 1]$ (union of signed and unsigned)
         - This is not neccessarily the **width of a word** (modern machines are 32 bits)
     - `size_t` is garaunteed to be **word** size wide and `unsigned`, can represent $[0, 2^31 - 1]$ values.
 

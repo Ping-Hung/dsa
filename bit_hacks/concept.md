@@ -157,12 +157,12 @@
      x = (x + ((1 << k) - 1)) >> k; /* equals to floor(x / 2^k);
 ```
 
-    - **Notes on Signed Right Shifts**
-        - when $x < 0$, `x >>= k` $neq \lfloor x \div 2^k \rfloor$
-        - round towards $- \infty$
-        - `x = (x + ((1 << k) - 1)) >> k;` $= \lfloor x \div 2^k \rfloor$
-            - `(x + ((1 << k) - 1))` adds `0b1...1` (k-bit of one's) to `x`
-            - This "rounds up" the upper $w - k$ bits of `x` before the shift.
-            - When the shift happens, rounding is not towards $- \infty$.
-            - equivalent to $x = \lfloor (x + 2^k - 1) / 2^k \rfloor$. 
+- **Notes on Signed Right Shifts**
+- when $x < 0$, `x >>= k` $neq \lfloor x \div 2^k \rfloor$
+- round towards $- \infty$
+- `x = (x + ((1 << k) - 1)) >> k;` $= \lfloor x \div 2^k \rfloor$
+    - `(x + ((1 << k) - 1))` adds `0b1...1` (k-bit of one's) to `x`
+    - This "rounds up" the upper $w - k$ bits of `x` before the shift.
+    - When the shift happens, rounding is not towards $- \infty$.
+    - equivalent to $x = \lfloor (x + 2^k - 1) / 2^k \rfloor$. 
 

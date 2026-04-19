@@ -101,12 +101,24 @@ From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_
 #### Case 1: $n_1 \leq n_2$
 ```math
     \begin{align*}
-        n_1 < n_2   &\iff \\
-        \frac{n_1 - 1 + n_2}{2} < \frac{n_2 - 1 + n_2}{2}   &iff\\
-        \frac{n_1 - 1 + n_2}{2} < \frac{2n_2 - 1 }{2}   &iff\\
+        n_1 \leq n_2   &\iff \\
+        \frac{n_1 - 1 + n_2 - 1}{2} \leq \frac{n_2 - 1 + n_2 - 1}{2}   &\iff\\
+        \frac{n_1 + n_2 - 2}{2} \leq \frac{2n_2 - 2}{2}   &\iff\\
     \end{align*}
 ```
+Since the operations involved are integer divisions (the quotient is truncated integer), the above
+equation could be rewritten as
+$$ \lfloor \frac{n_1 - 1 + n_2}{2} \rfloor \leq \lfoor \frac{2n_2 - 1}{2} \rfloor $$
 
+The right hand side could be re-written as
+```math
+        \begin{align*}
+            \lfloor \frac{2n_2 - 1 }{2} \rfloor &\iff \lfloor \frac{2n_2}{2} \rfloor \\
+            &\iff \lfloor n-2 \rfloor
+        \end{align*}
+```
+
+by *properties of the floor function* (which might need more rigorous proof...)
 
 
 #### Case 2: $n_1 > n_2$

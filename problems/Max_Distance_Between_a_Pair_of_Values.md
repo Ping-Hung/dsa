@@ -119,25 +119,9 @@ equation could be rewritten as the following
 ```
 One could see $\max \text{mid}$ is bounded above by $n_2 - 1$ when $n_1 \leq n_2$.
 
-#### Case 2: $n_1 > n_2$ (This Part still needs to be verified)
-Repeating above procedure, 
-```math
-    \begin{align*}
-        n_1 > n_2   &\iff \\
-        \frac{n_1 - 1 + n_2 - 1}{2} > \frac{n_2 - 1 + n_2 - 1}{2}   &\iff\\
-        \frac{n_1 + n_2 - 2}{2} > \frac{2n_2 - 2}{2}.
-    \end{align*}
-```
-Again, introducing the floor function back to what we have thus far,
-
-```math
-    \begin{align*}
-        \frac{n_1 + n_2 - 2}{2} > \frac{2n_2 - 2}{2} &\iff \\
-        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor > \lfloor \frac{2n_2 - 2}{2} \rfloor &\iff \\
-        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor > \lfloor n_2 - 1 \rfloor &\square
-    \end{align*}
-```
-
-
+**Side Note**
+- When we have $n_1 = n_2$, there's no need to worry `nums2[mid]` triggering out-of-bounds access,
+  when one of the array is longer, above proof could justify the initialization of `r := n_2 - 1`
+  (this is assuming $n_2$ is the longer array).
 
 ## Two Pointers

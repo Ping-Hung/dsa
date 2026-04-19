@@ -43,13 +43,13 @@ func maxDistance(nums1 []int, nums2 []int) int {
 
 |Time complexity | Space Complexity |
 |:---:|:---:|
-|$O(n^{2})$ | $O()$|
+|$O(n^{2})$ | $O(1)$|
 
 
 ## Binary Search
 * Makes use of the **non-increasing** property, converting the inner loop into binary search
 * `r = n2 - 1`, this initialization requirement needs to be proved.
-```=go
+```go=
 func maxDistance(nums1 []int, nums2 []int) int {
     var (
         dist int = 0
@@ -83,6 +83,8 @@ func maxDistance(nums1 []int, nums2 []int) int {
 |$O(n1 \log{n2} )$ | $O(1)$|
 
 ### `r = n2 - 1` Requirement Proof
-$n_1$ is the length of `nums1` and $n_2$ is the length of `nums2`, from loop initialization
+$n_1$ is the length of `nums1` and $n_2$ is the length of `nums2`, from `for i := 0; i < n1; i++`,
+one could infer $i \in {0, 1, 2, ..., n_{1} - 1}$.
+The initialization `r = n2 - 1` is to garauntee computation on 
 
 ## Two Pointers

@@ -97,29 +97,27 @@ In other words, we are trying to show the validity of the inequality given `r` i
 From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and $r = n_2 - 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after the first iteration of binary search.
 
 #### Case 1: $n_1 \leq n_2$
+Plugging the $l$ and $r$ values into $\text{mid} = \frac{l + r}{2}$.
+
 ```math
     \begin{align*}
         n_1 \leq n_2   &\iff \\
         \frac{n_1 - 1 + n_2 - 1}{2} \leq \frac{n_2 - 1 + n_2 - 1}{2}   &\iff\\
-        \frac{n_1 + n_2 - 2}{2} \leq \frac{2n_2 - 2}{2}   &\iff\\
+        \frac{n_1 + n_2 - 2}{2} \leq \frac{2n_2 - 2}{2}.
     \end{align*}
 ```
 Since the operations involved are integer divisions (the quotient is truncated integer), the above
-equation could be rewritten as
+equation could be rewritten as the following
 
 ```math
-\lfloor \frac{n_1 - 1 + n_2}{2} \rfloor \leq \lfoor \frac{2n_2 - 1}{2} \rfloor
+    \begin{align*}
+        \frac{n_1 + n_2 - 2}{2} \leq \frac{2n_2 - 2}{2} &\iff \\
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfoor \frac{2n_2 - 2}{2} \rfloor &\iff \\
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfoor n_2 - 1 \rfloor &\square
+    \end{align*}
 ```
+One could see $\max \text{mid}$ is bounded above by $n_2 - 1$ when $n_1 \leq n_2$.
 
-The right hand side could be re-written as
-```math
-        \begin{align*}
-            \lfloor \frac{2n_2 - 1 }{2} \rfloor &\iff \lfloor \frac{2n_2}{2} \rfloor \\
-            &\iff \lfloor n-2 \rfloor
-        \end{align*}
-```
-
-by *properties of the floor function* (which might need more rigorous proof...)
 
 
 #### Case 2: $n_1 > n_2$

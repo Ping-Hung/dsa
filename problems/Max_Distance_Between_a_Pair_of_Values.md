@@ -94,9 +94,7 @@ In other words, we are trying to show the validity of the inequality given `r` i
     \forall l \in {0, 1, 2, ..., n_1 - 1}, \text{mid} = \frac{(l + r)}{2} < n_2
 ```
 
-From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and $r = n_2
-- 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after the
-  first iteration of binary search.
+From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and $r = n_2 - 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after the first iteration of binary search.
 
 #### Case 1: $n_1 \leq n_2$
 ```math
@@ -108,7 +106,10 @@ From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_
 ```
 Since the operations involved are integer divisions (the quotient is truncated integer), the above
 equation could be rewritten as
-$$ \lfloor \frac{n_1 - 1 + n_2}{2} \rfloor \leq \lfoor \frac{2n_2 - 1}{2} \rfloor $$
+
+```math
+\lfloor \frac{n_1 - 1 + n_2}{2} \rfloor \leq \lfoor \frac{2n_2 - 1}{2} \rfloor
+```
 
 The right hand side could be re-written as
 ```math

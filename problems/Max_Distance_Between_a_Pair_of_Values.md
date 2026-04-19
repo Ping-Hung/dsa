@@ -49,7 +49,7 @@ func maxDistance(nums1 []int, nums2 []int) int {
 ## Binary Search
 * Makes use of the **non-increasing** property, converting the inner loop into binary search
 * `r = n2 - 1`, this initialization requirement needs to be proved.
-```go=
+```go
 func maxDistance(nums1 []int, nums2 []int) int {
     var (
         dist int = 0
@@ -80,11 +80,35 @@ func maxDistance(nums1 []int, nums2 []int) int {
 ```
 |Time complexity | Space Complexity |
 |:---:|:---:|
-|$O(n1 \log{n2} )$ | $O(1)$|
+|$O(n_1 \log{n_2} )$ | $O(1)$|
 
 ### `r = n2 - 1` Requirement Proof
 $n_1$ is the length of `nums1` and $n_2$ is the length of `nums2`, from `for i := 0; i < n1; i++`,
-one could infer $i \in {0, 1, 2, ..., n_{1} - 1}$.
-The initialization `r = n2 - 1` is to garauntee computation on 
+one could infer $l, i \in {0, 1, 2, ..., n_{1} - 1}$.
+The initialization `r = n2 - 1` is to garauntee `mid = l + (r - l) / 2` (equivalent to `mid = (l +
+r) / 2`) is strictly less than `len(nums2)` to prevent out-of-bounds access.
+
+In other words, we are trying to show the validity of the inequality given `r` is initialized to `n2
+- 1`
+```math
+    \forall l \in {0, 1, 2, ..., n_1 - 1}, \text{mid} = \frac{(l + r)}{2} < n_2
+```
+
+From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and $r = n_2
+- 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after the
+  first iteration of binary search.
+
+#### Case 1: $n_1 \leq n_2$
+```math
+    \begin{align*}
+        n_1 < n_2   &\iff \\
+        \frac{n_1 - 1 + n_2}{2} < \frac{n_2 - 1 + n_2}{2}   &iff\\
+        \frac{n_1 - 1 + n_2}{2} < \frac{2n_2 - 1 }{2}   &iff\\
+    \end{align*}
+```
+
+
+
+#### Case 2: $n_1 > n_2$
 
 ## Two Pointers

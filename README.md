@@ -7,16 +7,17 @@ Personal DSA study notes
 2. use that "memory" to perform computation until desired result is obtained.
 
 # Notes
-1. [Cultivating algorithmic maturity by solving problems](concepts.md)
-2. [Interview Problem Solving Strategy](strategy.md)
-3. [Sliding Window Tips](sliding_window/concept.md)
-4. [Last Seen Index](Last-Seen-Index/concept.md)
-5. [Divide and Conquer (Recursion)](divide_and_conquer/concept.md)
-6. [DFS Guide](DFS/concept.md)
-7. [BFS Guide](BFS/concept.md)
-8. [DP Approaches](1-D%20DP/concept.md)
-9. [2D DP](2D_DP/concept.md)
-10. [(Low level) Bit Hacks)](bit_hacks/concept.md)
+1.  [Cultivating algorithmic maturity by solving problems](concepts.md)
+2.  [Interview Problem Solving Strategy](strategy.md)
+3.  [Sliding Window Tips](sliding_window/concept.md)
+4.  [Last Seen Index](Last-Seen-Index/concept.md)
+5.  [Divide and Conquer (Recursion)](divide_and_conquer/concept.md)
+6.  [DFS Guide](DFS/concept.md)
+7.  [BFS Guide](BFS/concept.md)
+8.  [DP Approaches](1-D%20DP/concept.md)
+9.  [2D DP](2D_DP/concept.md)
+10. [(Low level) Bit Hacks](bit_hacks/concept.md)
+11. [Miscellaneous](problems/README.md)
 
 # Interview Guidelines
 1. READ! the problem carefully, DON'T rush to code.

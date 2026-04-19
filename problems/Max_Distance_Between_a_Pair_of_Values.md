@@ -88,13 +88,14 @@ one could infer $l, i \in {0, 1, 2, ..., n_{1} - 1}$.
 The initialization `r = n2 - 1` is to garauntee `mid = l + (r - l) / 2` (equivalent to `mid = (l +
 r) / 2`) is strictly less than `len(nums2)` to prevent out-of-bounds access.
 
-In other words, we are trying to show the validity of the inequality given `r` is initialized to `n2
-- 1`
+In other words, we are trying to show the validity of the inequality given `r` is initialized to `n2 - 1`
 ```math
     \forall l \in {0, 1, 2, ..., n_1 - 1}, \text{mid} = \frac{(l + r)}{2} < n_2
 ```
 
-From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and $r = n_2 - 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after the first iteration of binary search.
+From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and 
+$r = n_2 - 1$ because no values of $l$ can exceed $n_1 - 1$, and the value of $r$ can decrease after
+the first iteration of binary search.
 
 #### Case 1: $n_1 \leq n_2$
 Plugging the $l$ and $r$ values into $\text{mid} = \frac{l + r}{2}$.
@@ -118,8 +119,25 @@ equation could be rewritten as the following
 ```
 One could see $\max \text{mid}$ is bounded above by $n_2 - 1$ when $n_1 \leq n_2$.
 
+#### Case 2: $n_1 > n_2$ (This Part still needs to be verified)
+Repeating above procedure, 
+```math
+    \begin{align*}
+        n_1 > n_2   &\iff \\
+        \frac{n_1 - 1 + n_2 - 1}{2} > \frac{n_2 - 1 + n_2 - 1}{2}   &\iff\\
+        \frac{n_1 + n_2 - 2}{2} > \frac{2n_2 - 2}{2}.
+    \end{align*}
+```
+Again, introducing the floor function back to what we have thus far,
+
+```math
+    \begin{align*}
+        \frac{n_1 + n_2 - 2}{2} > \frac{2n_2 - 2}{2} &\iff \\
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor > \lfloor \frac{2n_2 - 2}{2} \rfloor &\iff \\
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor > \lfloor n_2 - 1 \rfloor &\square
+    \end{align*}
+```
 
 
-#### Case 2: $n_1 > n_2$
 
 ## Two Pointers

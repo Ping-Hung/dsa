@@ -112,8 +112,8 @@ equation could be rewritten as the following
 ```math
     \begin{align*}
         \frac{n_1 + n_2 - 2}{2} \leq \frac{2n_2 - 2}{2} &\iff \\
-        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfoor \frac{2n_2 - 2}{2} \rfloor &\iff \\
-        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfoor n_2 - 1 \rfloor &\square
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfloor \frac{2n_2 - 2}{2} \rfloor &\iff \\
+        \lfloor \frac{n_1 + n_2 - 2}{2} \rfloor \leq \lfloor n_2 - 1 \rfloor &\square
     \end{align*}
 ```
 One could see $\max \text{mid}$ is bounded above by $n_2 - 1$ when $n_1 \leq n_2$.

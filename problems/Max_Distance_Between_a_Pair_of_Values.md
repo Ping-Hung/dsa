@@ -84,7 +84,7 @@ func maxDistance(nums1 []int, nums2 []int) int {
 
 ### `r = n2 - 1` Requirement Proof
 $n_1$ is the length of `nums1` and $n_2$ is the length of `nums2`, from `for i := 0; i < n1; i++`,
-one could infer $l, i \in \{0, 1, 2, ..., n_{1} - 1\}$.
+one could infer $l, i \in \\{0, 1, 2, ..., n_{1} - 1\\} $.
 The initialization `r = n2 - 1` is to garauntee `mid = l + (r - l) / 2` (equivalent to `mid = (l +
 r) / 2`) is strictly less than `len(nums2)` to prevent out-of-bounds access.
 

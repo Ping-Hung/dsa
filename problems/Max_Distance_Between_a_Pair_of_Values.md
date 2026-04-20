@@ -86,11 +86,16 @@ func maxDistance(nums1 []int, nums2 []int) int {
 $n_1$ is the length of `nums1` and $n_2$ is the length of `nums2`, from `for i := 0; i < n1; i++`,
 one could infer $l, i \in \\{0, 1, 2, ..., n_{1} - 1\\} $.
 The initialization `r = n2 - 1` is to garauntee `mid = l + (r - l) / 2` (equivalent to `mid = (l +
-r) / 2`) is strictly less than `len(nums2)` to prevent out-of-bounds access.
+r) / 2`) is strictly less than `n2 = len(nums2)` to prevent out-of-bounds access. i.e. the following
+inequality
+
+```math
+    \text{mid} = \frac{l + r}{2} < n_{2}
+```
 
 In other words, we are trying to show the validity of the inequality given `r` is initialized to `n2 - 1`
 ```math
-    \forall l \in \{ 0, 1, 2, ..., n_1 - 1 \}, \text{mid} = \frac{(l + r)}{2} < n_2
+    \forall l \in \{ 0, 1, 2, ..., n_1 - 1 \}, \text{mid} = \frac{(l + r)}{2} < n_2.
 ```
 
 From the range of $l$, we can limit the scope of discussion to $l = \max{l} = n_1 - 1$, and 

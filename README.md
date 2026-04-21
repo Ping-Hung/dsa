@@ -34,10 +34,15 @@ Personal DSA study notes
 > “What is the simplest thing I can track to solve this?”
   - If you're still debating after that time , choose the **simplest** state variable
 
-### Guidelines
 **Don't Pigeonhole Yourself to One Particular Pattern**
 - You can't always solve a problem using only binary search or sliding window, sometimes you need
   to blend them with other algorithms or do some modifications.
+
+**Confused or Stucked?**
+1. Ask *How would the problem look like visually? How may I visualize this?*
+2. Attempt to visualize it (with picture or other tools)
+
+### Guidelines
 
 **Thinking mode (≤10 min):**    
 - identify events

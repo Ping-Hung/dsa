@@ -36,11 +36,15 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     return head;
 }
 ```
+### Complexities
+|Time|Space|
+|:---:|:---:|
+|$O(n)$|$O(1)$|
 
 ## Two-Pointers
 1. Initialize `fast` and `slow`, both pointing at `head`
-~~2. Advance both pointers
-    - Ensure `fast` is `n` steps ahead of `slow`~~
+2. ~~Advance both pointers~~
+     - ~~Ensure `fast` is `n` steps ahead of `slow`~~
     - Don't overthink
 2. Move `fast` ahead by `n` steps, then advance `slow` until `fast` reaches the last node.
 
@@ -76,3 +80,8 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     return head;
 }
 ```
+
+### Complexities
+|Time|Space|
+|:---:|:---:|
+|$O(n)$|$O(1)$|

@@ -33,7 +33,12 @@ Personal DSA study notes
 - Limit (pure and rigorous) thinking time to 5 ~ 15 minutes max. Try answering
 > “What is the simplest thing I can track to solve this?”
   - If you're still debating after that time , choose the **simplest** state variable
-### Guideline
+
+### Guidelines
+**Don't Pigeonhole Yourself to One Particular Pattern**
+- You can't always solve a problem using only binary search or sliding window, sometimes you need
+  to blend them with other algorithms or do some modifications.
+
 **Thinking mode (≤10 min):**    
 - identify events
 - identify state

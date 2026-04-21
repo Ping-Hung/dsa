@@ -55,28 +55,31 @@ struct ListNode {
 };
 
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
-    // Two Pointers: move fast n steps ahead, then maintain the gap
+    // Two Pointers: first create a "gap" of n nodes, then maintain it by simultaneously 
+    // advancing both pointers
     // invariant: fast is a valid ListNode that is always n steps ahead of slow 
-    struct ListNode *fast = head, **slow = &(head)->next;
+    struct ListNode *fast = head, **slow = &head->next;
     for (int i = 0; i < n; i++) {
-        fast =  fast->next;
-    }
-    if (!fast) {
-        // total_nodes - n nodes from the head (n nodes away from the last node)
-        return head->next;
+        fast = fast->next;
     }
 
-    // advance fast and slow
+    if (!fast) {
+        // when n == total_nodes (total_nodes from end means remove current head)
+        fast = head;
+        head = head->next;
+        free(fast);
+        goto end;
+    }
+
     while (fast && fast->next) {
         fast = fast->next;
         slow = &(*slow)->next;
     }
 
-    // remove node
-    struct ListNode *victim = *slow;
+    fast = *slow;
     *slow = (*slow)->next;
-    free(victim);
-
+    free(fast);
+end:
     return head;
 }
 ```

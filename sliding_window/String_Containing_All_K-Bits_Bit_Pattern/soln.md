@@ -68,6 +68,7 @@ bool hasAllCodes(char* s, int k)
   multiplication.
 
 ## Improved Implementation
+This is a derivation from the initial version above with a lot more bit-tricks, so is less readable. Refer to the initial code for sliding window concepts.
 ```c
 #define MAX_PATTERNS 1U << 20   // there are 2^k possible patterns 
 /* usage: pattern[0b101] = pattern[5] := is 5 seen? */
@@ -76,7 +77,7 @@ bool pattern[MAX_PATTERNS] = { false };
 bool hasAllCodes(char* s, int k) {
     unsigned code_val = 0;
     int s_len = strlen(s);
-    int pattern_seen = 1 << k;
+    unsigned pattern_seen = 1 << k;  /* there are 2^k binary patterns to be seen, so this should be 0 if all patterns exists within s */
 
     /* scan through s, book-keeping seen patterns */ 
     int l = 0;
@@ -85,10 +86,12 @@ bool hasAllCodes(char* s, int k) {
         code_val = ((code_val << 1) & mask) | (s[r] - '0');
         if (r - l + 1 == k) {
             if (!pattern[code_val]) {
+                /* mark **unique** patterns seen thus far */
                 pattern[code_val] = true;
-                pattern_seen--; /* mark **unique** patterns seen thus far */
+                pattern_seen--; 
             }
-            /* prep for next iter: unset (turn off) the kth (highest order) bit */
+            /* prep for next iter: unset (turn off) the kth (highest order) bit
+             * equivalent to code_val -= (1 << (k - 1)) * (s[l] - '0'), the "else" block */
             code_val &= ~(1 << (k - 1));
             l += 1;
         }

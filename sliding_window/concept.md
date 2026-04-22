@@ -1,4 +1,12 @@
 # Tips for Sliding Window
+# Core Components
+- 2 pointers (array indeces, linked-list/tree pointers) that maintains a window of `[l...r]`
+- An invariant that the window shall maintain. (This is an idea either mentioned in the problem or
+  derived).
+- Book-keeping utilities
+    - simpliest, a variable, but could also be a hash-table, or both
+
+# ChatGPT Response
 ## Core Structure
 1. Window Expansion
   + Usually book-keep (add in) a newly seen element.

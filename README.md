@@ -5,8 +5,9 @@ Personal DSA study notes
 - There will usually be 2 parts in an algorithm
 1. remember past states/computations.
 2. use that "memory" to perform computation until desired result is obtained.
+3. Ask yourself some of these [Guiding Questions](Guiding\ Questions/index.md) to help analyze a problem.
 
-# Notes
+# Notes (Categorized by Topics)
 1.  [Cultivating algorithmic maturity by solving problems](concepts.md)
 2.  [Interview Problem Solving Strategy](strategy.md)
 3.  [Sliding Window Tips](sliding_window/concept.md)
@@ -15,7 +16,7 @@ Personal DSA study notes
 6.  [Divide and Conquer (Recursion)](divide_and_conquer/concept.md)
 7.  [DFS Guide](DFS/concept.md)
 8.  [BFS Guide](BFS/concept.md)
-9.  [DP Approaches](1-D%20DP/concept.md)
+9.  [DP Approaches](1-D\ DP/concept.md)
 10.  [2D DP](2D_DP/concept.md)
 11. [(Low level) Bit Hacks](bit_hacks/concept.md)
 12. [Miscellaneous](problems/README.md)

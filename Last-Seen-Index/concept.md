@@ -6,7 +6,7 @@
 prev = -1   # the index of previous event
 for i:
     if event:
-        update answer using i - prev
+        update answer by doing some operations on i and prev
         prev = i
 ```
 

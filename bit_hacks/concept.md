@@ -108,13 +108,14 @@
     - Can use some examples to verify.
 ```c
     unsigned count = BIG_NUM;
+    unsigned step = STEP;
     /* usual infinite loop + overflow count down */
-    for (unsigned i = count; i >=0; i--) {
+    for (unsigned i = count; i >= 0; i--) {
         /* loop body */
     }
 
     /* "correct" way to count down that considers modular arithmetic (wrapping around) */
-    for (unsigned i = count; i < count; i--) {
+    for (unsigned i = count - step; i < count; i -= step) {
         /* loop body */
     }
 ```
@@ -166,3 +167,6 @@
     - When the shift happens, rounding is not towards $- \infty$.
     - The C expression is equivalent to $x = \lfloor (x + 2^k - 1) / 2^k \rfloor$. 
 
+9. <mark> **Extract the least significant bit (the `1` bit closest to the 0th bit)** </mark>
+* `x & -x` does the trick, here's a quick proof  
+[lsbit trick from min_heap.h](https://hackmd.io/@GziTqAu1S-yp4upMQJi1ZA/ByT81iUIze)

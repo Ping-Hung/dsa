@@ -1,6 +1,8 @@
 # DSA
 Personal DSA study notes
 
+
+
 # Algorithm Design
 - There will usually be 2 parts in an algorithm
 1. remember past states/computations.
@@ -9,17 +11,18 @@ Personal DSA study notes
 
 # Notes (Categorized by Topics)
 1.  [Cultivating algorithmic maturity by solving problems](concepts.md)
-2.  [Interview Problem Solving Strategy](strategy.md)
-3.  [Sliding Window Tips](sliding_window/concept.md)
-4.  [Two Pointers](two-pointers/README.md)
-5.  [Last Seen Index](Last-Seen-Index/concept.md)
-6.  [Divide and Conquer (Recursion)](divide_and_conquer/concept.md)
-7.  [DFS Guide](DFS/concept.md)
-8.  [BFS Guide](BFS/concept.md)
-9.  [DP Approaches](1-D\ DP/concept.md)
-10.  [2D DP](2D_DP/concept.md)
-11. [(Low level) Bit Hacks](bit_hacks/concept.md)
-12. [Miscellaneous](problems/README.md)
+2.  [Array & Hashing]('array & hashing'/concept.md)
+3.  [Interview Problem Solving Strategy](strategy.md)
+4.  [Sliding Window Tips](sliding_window/concept.md)
+5.  [Two Pointers](two-pointers/README.md)
+6.  [Last Seen Index](Last-Seen-Index/concept.md)
+7.  [Divide and Conquer (Recursion)](divide_and_conquer/concept.md)
+8.  [DFS Guide](DFS/concept.md)
+9.  [BFS Guide](BFS/concept.md)
+10. [DP Approaches](1-D\ DP/concept.md)
+11. [2D DP](2D_DP/concept.md)
+12. [(Low level) Bit Hacks](bit_hacks/concept.md)
+13. [Miscellaneous](problems/README.md)
 
 # Interview Guidelines
 1. READ! the problem carefully, DON'T rush to code.

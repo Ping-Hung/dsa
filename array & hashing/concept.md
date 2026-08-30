@@ -12,3 +12,4 @@
 
 # Problem
 * [Valid Sudoku](valid_sudoku.md)
+* [Longest Consecutive Sequence](longest_consecutive_sequence.md)

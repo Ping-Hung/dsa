@@ -10,6 +10,8 @@ Return true if the Sudoku board is valid, otherwise return false
 * `board[i].length == 9`
 * `board[i][j] is a digit 1-9 or '.'`.
 
+## Constraint
+
 ## Desired Complexities
 |Time|Space|
 |:---:|:---:|
@@ -29,6 +31,12 @@ Return true if the Sudoku board is valid, otherwise return false
 > programmed correctly
 4. How can this solution be improved (in terms of time and space)?
 > From scanning 3 passes to *1* scan only, using a more sophisticated data structure.
+1. What needs to be tracked?
+> ~~the board~~ digit `1` to `9` for row, column, 3x3 grids.
+2. What is a *plausible shape* of a solution?
+> notice one needs to check all $9 \times 9$ ($n^2$) squares, so shall be a "flavor" of nested loop.
+3. Does this solution work? **Is it correct**?
+4. How can this solution be improved (in terms of time and space)?
 
 # Solution
 
@@ -77,7 +85,6 @@ def isValidSudoku(board: List[List[str]]) -> bool:
                     seen.add(board[i][j])
     return True
 ```
-
 
 ## Cleaner Version
 * Scan the 9 x 9 board only once, but use 3 dictionaries to book-keep seen digits.

@@ -1,6 +1,13 @@
 # Divide and Conquer
-* A process of solving a single problem by using known/solved subproblems.
+* Process of solving a single problem by 
+    1. Recognize how this problem is composed of identical but smaller subproblems.
+    2. Write a recursive relation (formula) that models how smaller subproblems contributes to the
+       larger problem.
+    3. Define what the simplest subproblem is (base case), and how to solve it.
+    4. Let the (call) stack do the work for you.
 * Recursion naturally fits into this paradigm (pattern).
+* Playing with smaller examples (as many as you want, as long as it inspires pattern recognition)
+  helps a ton.
 ## Procedure (Concepts)
 1. Identify the most trivial problem that can be solved
     - Usually, they could be solved at a glance ($O(1)$ time).

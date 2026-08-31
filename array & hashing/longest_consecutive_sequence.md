@@ -3,7 +3,7 @@
 |:---:|:---:|
 |`nums: List[int]`|`length: int`|
 
-Given an integer list `nums`, return the length of the longest*consecutive sequence* existed in the
+Given an integer list `nums`, return the length of the longest *consecutive sequence* existed in the
 list. A *consecutive sequence* is a sequence of numbers `nums[c1], nums[c2], nums[c3],...` such that 
 `nums[c1] + 1 = nums[c2]`, `nums[c2] + 1 = nums[c3]`,... . **You must write an algorithm that runs
 in $O(n)$ time**.

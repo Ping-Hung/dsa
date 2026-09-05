@@ -29,7 +29,7 @@
 
 ```c
     unsigned mask = (1U << width) - 1; // 1, 3, 7, ... 2^width - 1
-    unsigned offset = lsb_of_mask_subject - 0; // distance between bit 0 and
+    unsigned offset = lsb_of_masked_group - 0; // distance between bit 0 and
                                                // lsb of the bit-group that's
                                                // intended to be masked
     unsigned new_pattern = pattern & ~(mask <<  offset);
@@ -43,12 +43,12 @@
 ```c
     /* 
      *  This "dereferencing/accessing casted address" trick preserves the bit pattern 
-     *   of the operand and returns a  "direct translation" of that bit pattern
-     *   as the type specified. 
+     *   of the operand and returns an "interpretation" of that bit pattern according
+     *   to the type-cast.
      * 	    - **Caution**: this trick is an undefined behavior (UB) by C
      * 	      standards, and is generally safer to use a union for multiple
      * 	      interpretation of a single bit pattern.
-     *  e.g. 0xff << 23 --> *(float *)& --> bit pattern 0xff << 23 treated as a float.
+     *  e.g. 0xff << 23 → *(float *)& → bit pattern 0xff << 23 treated as a float.
      */
     unsigned int pattern = (0xff << 23) | 1;
     float d = *(float *)&pattern;
@@ -75,7 +75,7 @@
            u_var.as_uint);
 ```  
 3. <mark>**Toggle**</mark>: change a bit-field (or a group of bit-fields) from 0 to 1 or 1 to 0.
-    - Done with XOR (let x be a 1b long boolean variable, x ^ 1 = ~x holds)  
+    - Done with XOR (let x be a 1-bit boolean variable, x ^ 1 = ~x holds)  
 
 ```c
     for (char *a_c = buffer; *a_c != '\0'; a_c++) {
@@ -106,6 +106,12 @@
     - Usual (intuitive, no binary system knowledge) way can lead to infinite loop, which stems from counter variable `i` overflows.
     - Makes use of modular arithmetic properties to prevent this issue.
     - Can use some examples to verify.
+    - Safer way: (use `size_t` instead of `unsigned`)
+        - (Due to historical legacy, ) `int` and `unsigned` only garauntees valid representation of
+          $[-2^{15}, 2^{15} - 1]$ (union of signed and unsigned)
+            - This is not neccessarily the **width of a word** (modern machines are 32 bits)
+        - `size_t` is garaunteed to be **word** size wide and `unsigned`, can represent $[0, 2^31 - 1]$ values.
+
 ```c
     unsigned count = BIG_NUM;
     unsigned step = STEP;
@@ -119,10 +125,11 @@
         /* loop body */
     }
 ```
-- Even better way: (use `size_t` instead of `unsigned`)
-    - `int` or `unsigned` only garauntees valid representation of $[-2^{15}, 2^{15} - 1]$ (union of signed and unsigned)
-        - This is not neccessarily the **width of a word** (modern machines are 32 bits)
-    - `size_t` is garaunteed to be **word** size wide and `unsigned`, can represent $[0, 2^31 - 1]$ values.
+
+**Explanation**<br>
+let `count = k*step`, on loop initialization, `i = (k - 1) * step`. Since each iteration decrements
+`i` by `step`, after (k - 1) steps, `i` becomes 0. Upon finishing this iteration, `i` was wrapped
+around to `U_INT_MAX`, which triggers the exit condition `i >= count`.
 
 7. <mark>**Multiplying $2^k$ by Left Shifts**</mark>
     - Goal: after shift, $x$ becomes $x \times 2^k$

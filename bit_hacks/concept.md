@@ -128,8 +128,8 @@
 
 **Explanation**<br>
 let `count = k*step`, on loop initialization, `i = (k - 1) * step`. Since each iteration decrements
-`i` by `step`, after (k - 1) steps, `i` becomes 0. Upon finishing this iteration, `i` was wrapped
-around to `U_INT_MAX`, which triggers the exit condition `i >= count`.
+`i` by `step`, after (k - 1) steps, `i` becomes 0. Upon finishing this iteration, `i`, holding `0 -
+1`, was wrapped around to `UINT_MAX`, which triggers the exit condition `i >= count`.
 
 7. <mark>**Multiplying $2^k$ by Left Shifts**</mark>
     - Goal: after shift, $x$ becomes $x \times 2^k$

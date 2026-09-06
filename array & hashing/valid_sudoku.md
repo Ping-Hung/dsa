@@ -10,8 +10,6 @@ Return true if the Sudoku board is valid, otherwise return false
 * `board[i].length == 9`
 * `board[i][j] is a digit 1-9 or '.'`.
 
-## Constraint
-
 ## Desired Complexities
 |Time|Space|
 |:---:|:---:|
@@ -22,21 +20,19 @@ Return true if the Sudoku board is valid, otherwise return false
 > ~~the board~~ digit `1` to `9` for row, column, 3x3 grids.
 > 1) one hashmap, set back to zero after each scan (row → col → square)
 > 2) three hashmaps, designed specifically for row scan, column scan, square scan
->   - key from each map ranges from `0` to `8` (book-keeping board)
->   - The value of the map is a set (eliminate duplicates)
+>   - key: digit `1` to `9`, value: each `(r,c)` coordinate
+>   - The essence: each digit (`1` to `9`) can only exist once in every row, column and square.
+>     Therefore, any digit `i ∈ [1, 9]` cannot be mapped to 2 distinct `(r,c)` coordinates.
+
 2. What is a *plausible shape* of a solution?
-> notice one needs to check all $9 \times 9$ ($n^2$) squares, so shall be a "flavor" of nested loop.
+> A "flavor" of nested loop to check all $9 \times 9$ ($n^2$) squares on the sudoku board.
+
 3. Does this solution work? **Is it correct**?
 > A thorough scan of the board looks over all squares, will be correct if the checking logic is
 > programmed correctly
+
 4. How can this solution be improved (in terms of time and space)?
 > From scanning 3 passes to *1* scan only, using a more sophisticated data structure.
-1. What needs to be tracked?
-> ~~the board~~ digit `1` to `9` for row, column, 3x3 grids.
-2. What is a *plausible shape* of a solution?
-> notice one needs to check all $9 \times 9$ ($n^2$) squares, so shall be a "flavor" of nested loop.
-3. Does this solution work? **Is it correct**?
-4. How can this solution be improved (in terms of time and space)?
 
 # Solution
 
@@ -107,22 +103,21 @@ transformed:
 |:---:|:---:|:---:|
 |1| | |
 |2| | |
-|3| | |
 
 
 ```python
 def isValidSudoku(board: List[List[str]]) -> bool:
-        cols = defaultdict(set) # str → (int, int)
-        rows = defaultdict(set) # str → (int, int)
-        squares = defaultdict(set) # (int, int) → (int, int)
+        rows = defaultdict(set)     # key: int, value: set[str]
+        cols = defaultdict(set)     # key: int, value: set[str]
+        squares = defaultdict(set)  # key: (int, int), value: set[str]
 
         for r in range(9):
             for c in range(9):
                 if board[r][c] == ".":
                     continue
-                if ( board[r][c] in rows[r]
-                    or board[r][c] in cols[c]
-                    or board[r][c] in squares[(r // 3, c // 3)]):
+                if ( board[r][c] in rows[r] or 
+                     board[r][c] in cols[c] or
+                     board[r][c] in squares[(r // 3, c // 3)]):
                     return False
 
                 cols[c].add(board[r][c])
@@ -131,4 +126,11 @@ def isValidSudoku(board: List[List[str]]) -> bool:
 
         return True
 ```
+
+# Solution Improvement Steps
+1. Can I implement a 3 pass $O(n^2)$ scan?
+2. Is 1 pass $O(n^2)$ possible?
+    - What and how many information must I track in each iteration?
+    - What kind of data structure aids me?
+3. How do I write the improved version?
 

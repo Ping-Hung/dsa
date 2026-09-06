@@ -246,5 +246,7 @@ You’re already *in* Step 4 territory — that’s a very good sign.
 
 # Definitions:
 ## Loop Invariant
-+ **Definition:** A property that holds before, throughout, and after the loop finishes. When the loop terminates, the desired result should arise. (i.e. ``not loop_condition and loop_invariant`` must hold for the desired result to show).
++ **Definition:** A property that holds before, throughout, and after the loop finishes. When the
+  loop terminates, the desired result should arise. (i.e. `NOT loop_condition AND loop_invariant`
+  must hold for the desired result to show).
 
